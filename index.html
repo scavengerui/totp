@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTP Authenticator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="card">
+            <header class="card-header">
+                <h1>Authenticator</h1>
+                <p>Secure One-Time Password</p>
+            </header>
+
+            <div class="totp-display">
+                <div class="code-container" id="totp-code">
+                    <span class="digit">0</span><span class="digit">0</span><span class="digit">0</span>
+                    <span class="separator"> </span>
+                    <span class="digit">0</span><span class="digit">0</span><span class="digit">0</span>
+                </div>
+                <div class="timer-container">
+                    <svg class="timer-svg" viewBox="0 0 100 100">
+                        <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45"></circle>
+                    </svg>
+                    <span class="timer-text" id="timer-text">30</span>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <span class="status-dot"></span>
+                <span class="status-text">Auto-refreshing in <span id="seconds-left">30</span>s</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
