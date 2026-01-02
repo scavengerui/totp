@@ -162,19 +162,17 @@ if (awsBtn) {
         e.preventDefault();
 
         const email = this.dataset.email;
-        const subtextSpan = this.querySelector('.btn-subtext');
-        const originalText = subtextSpan.textContent;
+        const textSpan = this.querySelector('.btn-text');
+        const originalText = textSpan.textContent;
 
         // Optimize: Copy to clipboard
         try {
             await navigator.clipboard.writeText(email);
             // Visual feedback
-            subtextSpan.textContent = "Email Copied!";
-            subtextSpan.style.color = "#232f3e"; // Ensure visibility
+            textSpan.textContent = "Email Copied!";
 
             setTimeout(() => {
-                subtextSpan.textContent = originalText;
-                subtextSpan.style.color = "";
+                textSpan.textContent = originalText;
             }, 2000);
         } catch (err) {
             console.error('Failed to copy email', err);
